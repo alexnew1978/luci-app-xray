@@ -21,16 +21,16 @@ jobs:
           - arch: mipsel_24kc
             sdk_url_path: https://downloads.openwrt.org/releases/23.05.5/targets/ramips/mt7621
             sdk_name: -sdk-23.05.5-ramips-mt7621_
-            
-            - arch: rockchip_armv8
+          - arch: rockchip_armv8
             sdk_url_path: https://downloads.openwrt.org/releases/24.10.2/targets/rockchip/armv8
             sdk_name: -sdk-24.10.2-rockchip-armv8_
-
+    
     env:
       SDK_URL_PATH: ${{ matrix.sdk_url_path }}
       SDK_NAME: ${{ matrix.sdk_name }}
       CCACHE_DIR: ~/.ccache
       CONFIG_CCACHE: y
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
